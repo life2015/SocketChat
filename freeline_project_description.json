@@ -1,0 +1,119 @@
+{
+    "project_type": "gradle",
+    "android_gradle_plugin_version": "3.0.0-beta2",
+    "freeline_gradle_plugin_version": "0.8.8",
+    "java_home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home",
+    "freeline_cache_dir": "/Users/retrox/AndroidStudioProjects/SocketChat",
+    "auto_dependency": true,
+    "product_flavor": "",
+    "build_script": "./gradlew :app:assembleDebug",
+    "build_script_work_directory": "",
+    "root_dir": "/Users/retrox/AndroidStudioProjects/SocketChat",
+    "main_project_name": "app",
+    "main_project_dir": "app",
+    "build_directory": "/Users/retrox/AndroidStudioProjects/SocketChat/app/build",
+    "build_cache_dir": "/Users/retrox/AndroidStudioProjects/SocketChat/app/build/freeline",
+    "build_tools_version": "25.0.2",
+    "sdk_directory": "/Users/retrox/Library/Android/sdk",
+    "build_tools_directory": "/Users/retrox/Library/Android/sdk/build-tools/25.0.2",
+    "compile_sdk_version": "android-25",
+    "compile_sdk_directory": "/Users/retrox/Library/Android/sdk/platforms/android-25",
+    "package": "com.twtstudio.retrox.socketchat",
+    "debug_package": "com.twtstudio.retrox.socketchat",
+    "main_manifest_path": "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml",
+    "launcher": "com.twtstudio.retrox.socketchat.MainActivity",
+    "apk_path": "/Users/retrox/AndroidStudioProjects/SocketChat/app/build/outputs/apk/debug/app-debug.apk",
+    "extra_dep_res_paths": [
+        
+    ],
+    "exclude_dep_res_paths": [
+        
+    ],
+    "main_r_path": "/Users/retrox/AndroidStudioProjects/SocketChat/app/build/generated/source/r/debug/R.java",
+    "use_jdk8": true,
+    "ignore_resource_ids": [
+        "avd_hide_password_1",
+        "avd_hide_password_2",
+        "avd_hide_password_3",
+        "avd_show_password_1",
+        "avd_show_password_2",
+        "avd_show_password_3"
+    ],
+    "use_system_gradle": false,
+    "check_sources_md5": [
+        
+    ],
+    "main_src_directory": [
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/java",
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/java"
+    ],
+    "main_res_directory": [
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/res",
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/res"
+    ],
+    "main_assets_directory": [
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/assets",
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/assets"
+    ],
+    "main_jni_directory": [
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/jni",
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/jni"
+    ],
+    "main_jniLibs_directory": [
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/jniLibs",
+        "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/jniLibs"
+    ],
+    "project_source_sets": {
+        "app": {
+            "main_src_directory": [
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/java",
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/java"
+            ],
+            "main_res_directory": [
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/res",
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/res"
+            ],
+            "main_assets_directory": [
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/assets",
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/assets"
+            ],
+            "main_jni_directory": [
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/jni",
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/jni"
+            ],
+            "main_jniLibs_directory": [
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/debug/jniLibs",
+                "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/jniLibs"
+            ],
+            "main_manifest_path": "/Users/retrox/AndroidStudioProjects/SocketChat/app/src/main/AndroidManifest.xml"
+        }
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "/Users/retrox/AndroidStudioProjects/SocketChat/app"
+        }
+    ],
+    "module_dependencies": {
+        "app": [
+            
+        ]
+    },
+    "databinding": [
+        
+    ],
+    "databinding_modules": [
+        
+    ],
+    "apt": {
+        
+    },
+    "retrolambda": {
+        
+    },
+    "databinding_compiler_jar": "",
+    "apt_libraries": {
+        "dagger": false,
+        "butterknife": false
+    }
+}
