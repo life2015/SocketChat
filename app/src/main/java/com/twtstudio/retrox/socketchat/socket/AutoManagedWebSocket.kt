@@ -1,5 +1,6 @@
 package com.twtstudio.retrox.socketchat.socket
 
+import com.twtstudio.retrox.socketchat.log
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.disposables.Disposable
@@ -41,6 +42,7 @@ class AutoManagedWebSocket(request: Request,
 
     private val flowable: Flowable<WebSocketEvent> = Flowable.create({ e ->
         val listener = RxWebSocketListener(e)
+        log("create new instance")
         e.setDisposable(object : Disposable {
             var disposed = false
 
@@ -61,7 +63,9 @@ class AutoManagedWebSocket(request: Request,
         webSocket = real
     }, BackpressureStrategy.BUFFER)
 
+    val sharedFlow = flowable.replay(5).refCount()
+
     override fun observe(): Flowable<WebSocketEvent> {
-        return flowable
+        return sharedFlow
     }
 }
