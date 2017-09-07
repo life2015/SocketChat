@@ -73,7 +73,6 @@ class ChatActivity : AppCompatActivity() {
 
         sendBtn.setOnClickListener {
             send()
-//            Toast.makeText(this@ChatActivity,result.toString(),Toast.LENGTH_SHORT).show()
         }
 
     }
