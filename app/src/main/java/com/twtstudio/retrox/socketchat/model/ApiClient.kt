@@ -1,5 +1,6 @@
 package com.twtstudio.retrox.socketchat.model
 
+import com.feinno.marketingdemo.delegate.Preference
 import com.google.gson.Gson
 import com.twtstudio.retrox.socketchat.socket.RxWebSocket
 import okhttp3.Request
@@ -11,21 +12,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.Type
 
 
-
-
 /**
  * Created by retrox on 03/09/2017.
  */
 object ApiClient {
+    val ip = UserManger.ip
+
     val retrofit = Retrofit.Builder()
-            .baseUrl("http://165.227.30.227/")
+            .baseUrl("http://$ip/")
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
 
     val api: Api = retrofit.create(Api::class.java)
 
-    private val host = "165.227.30.227:80"
+    private val host = "$ip"
     private val url = "ws://$host/ws"
     private val request: Request = okhttp3.Request.Builder().url(url).build()
     val websocket: RxWebSocket = RxWebSocket.createAutoRxWebSocket(request)

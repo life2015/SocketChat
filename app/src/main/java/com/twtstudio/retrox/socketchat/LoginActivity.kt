@@ -29,6 +29,9 @@ class LoginActivity : AppCompatActivity() {
     lateinit var loginBtn: Button
     lateinit var logoutBtn: Button
     lateinit var testBtn: Button
+    lateinit var goBtn: Button
+    lateinit var ipBtn: Button
+    lateinit var ipEditText: TextInputEditText
     val websocket = ApiClient.websocket
     val compositeDisposable = CompositeDisposable()
 
@@ -44,8 +47,13 @@ class LoginActivity : AppCompatActivity() {
         loginBtn = findView(R.id.login_button)
         logoutBtn = findView(R.id.logout_button)
         testBtn = findView(R.id.test_button)
+        goBtn = findView(R.id.go_button)
+        ipEditText = findView(R.id.edit_ip)
+        ipBtn = findView(R.id.setip_button)
+
         username.setText(UserManger.username, TextView.BufferType.EDITABLE)
         password.setText(UserManger.password, TextView.BufferType.EDITABLE)
+        ipEditText.setText(UserManger.ip,TextView.BufferType.EDITABLE)
 
 
         loginBtn.setOnClickListener {
@@ -61,6 +69,15 @@ class LoginActivity : AppCompatActivity() {
             UserManger.password = password.text.toString()
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
+        }
+
+        goBtn.setOnClickListener {
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            this@LoginActivity.startActivity(intent)
+        }
+
+        ipBtn.setOnClickListener {
+            UserManger.ip = ipEditText.text.toString()
         }
 
     }
@@ -90,7 +107,8 @@ class LoginActivity : AppCompatActivity() {
                 .subscribe({
                     val message = Message(username.text.toString(), "login", "null", "null")
                     log(message.toJson())
-                    websocket.send(message.toJson())
+                    val result = websocket.send(message.toJson())
+                    log("login:: $result")
                     Toast.makeText(this@LoginActivity, "Login sucessfully", Toast.LENGTH_SHORT).show()
                     UserManger.username = username.text.toString()
                     UserManger.password = password.text.toString()
@@ -115,6 +133,7 @@ class LoginActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     Toast.makeText(this@LoginActivity, it, Toast.LENGTH_SHORT).show()
+//                    websocket.close(-1,"exit")
                 }, Throwable::printStackTrace)
         compositeDisposable.add(disposeable)
     }

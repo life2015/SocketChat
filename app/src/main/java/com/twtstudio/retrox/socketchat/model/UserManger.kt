@@ -8,4 +8,5 @@ import com.feinno.marketingdemo.delegate.Preference
 object UserManger {
     var username: String by Preference("username","")
     var password: String by Preference("password","")
+    var ip by Preference("ip","172.23.163.58:8888")
 }

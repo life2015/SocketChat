@@ -41,7 +41,10 @@ class AutoManagedWebSocket(request: Request,
     }
 
     private val flowable: Flowable<WebSocketEvent> = Flowable.create({ e ->
-        val listener = RxWebSocketListener(e)
+        val listener = RxWebSocketListener(e, { webSocket ->
+            (webSocket as? RealWebSocket)?.connect(client)
+            log("try to reconnect")
+        })
         log("create new instance")
         e.setDisposable(object : Disposable {
             var disposed = false
@@ -63,7 +66,7 @@ class AutoManagedWebSocket(request: Request,
         webSocket = real
     }, BackpressureStrategy.BUFFER)
 
-    val sharedFlow = flowable.replay(5).refCount()
+    val sharedFlow = flowable.replay(10).refCount()
 
     override fun observe(): Flowable<WebSocketEvent> {
         return sharedFlow

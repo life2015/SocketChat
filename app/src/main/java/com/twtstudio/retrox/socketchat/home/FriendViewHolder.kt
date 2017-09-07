@@ -1,9 +1,11 @@
 package com.twtstudio.retrox.socketchat.home
 
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
 import com.twtstudio.retrox.socketchat.R
+import com.twtstudio.retrox.socketchat.chat.ChatActivity
 import com.twtstudio.retrox.socketchat.findView
 import com.twtstudio.retrox.socketchat.log
 import com.twtstudio.retrox.socketchat.message.Message
@@ -23,6 +25,11 @@ class FriendViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var subscription: Disposable? = null
 
     fun bind(name: String) {
+        itemView.setOnClickListener {
+            val intent = Intent(itemView.context,ChatActivity::class.java)
+            intent.putExtra("sender",name)
+            itemView.context.startActivity(intent)
+        }
         this.name.text = name
         content.text = "_"
         subscription = ApiClient.websocket.observe()

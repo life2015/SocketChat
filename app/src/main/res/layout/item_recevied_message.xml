@@ -7,10 +7,10 @@
     <TextView
         android:id="@+id/text_message"
         android:maxWidth="260dp"
-        android:layout_gravity="end"
+        android:layout_gravity="start"
         tools:text="这是一个测试消息啊啊啊啊啊啊啊啊啊啊啊"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/shape_message_send"
+        android:textColor="#1f2020"
+        android:background="@drawable/shape_message_received"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
